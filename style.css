@@ -1,0 +1,18 @@
+.submit_btn {
+  width: 100%;
+}
+#cards_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#title {
+  background-color: #e9ecef;
+}
+
+#button_group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
