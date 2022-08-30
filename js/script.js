@@ -1,9 +1,6 @@
 import { cardsContainer, inputForm, spinnerGif } from "./selectors.js";
 import { Card } from "./Card.js";
 import { updateListTitle } from "./updateListTitle.js";
-import {fetchPhoto} from "./fetchPhoto.js";
-
-
 
 inputForm.addEventListener('submit', (e) => addCard(e, cardsContainer));
 
