@@ -1,4 +1,5 @@
 import { updateListTitle } from "./updateListTitle.js";
+import { fetchPhoto } from "./fetchPhoto.js";
 
 export class Card {
   constructor() {
@@ -12,7 +13,8 @@ export class Card {
     
     this.imgElement  = document.createElement('img');
     this.imgElement.className = "card-img-top";
-    this.imgElement.src = photo;  
+    this.imgElement.src = photo;
+    fetchPhoto(destination, location).then(result => this.imgElement.src = result);
         
     this.cardTitleElement = document.createElement('h5');
     this.cardTitleElement.className = 'card-title';
@@ -56,14 +58,16 @@ export class Card {
     return card
   }
 
-  updateCard(card){
+  async updateCard(card){
     const newDestination = prompt('Enter new name');
     const newLocation = prompt('Enter new location');
-    const newPhotoUrl = prompt('Enter new photo Url');
 
     if(newDestination) card.cardTitleElement.textContent = newDestination;
     if(newLocation) card.cardSubtitleElement.textContent = newLocation;
-    if(newPhotoUrl) card.imgElement.src = newPhotoUrl;  
+    if(newDestination && newLocation) {
+      card.imgElement.src = "https://c.tenor.com/wpSo-8CrXqUAAAAi/loading-loading-forever.gif";
+      card.imgElement.src = await fetchPhoto(newDestination, newLocation);
+    }
   }  
     
   removeCard(card){
