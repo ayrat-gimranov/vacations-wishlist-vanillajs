@@ -65,7 +65,7 @@ export class Card {
     if(newDestination) card.cardTitleElement.textContent = newDestination;
     if(newLocation) card.cardSubtitleElement.textContent = newLocation;
     if(newDestination && newLocation) {
-      card.imgElement.src = "../img/Loading_icon.gif";
+      card.imgElement.src = "https://c.tenor.com/wpSo-8CrXqUAAAAi/loading-loading-forever.gif";
       card.imgElement.src = await fetchPhoto(newDestination, newLocation);
     }
   }  
