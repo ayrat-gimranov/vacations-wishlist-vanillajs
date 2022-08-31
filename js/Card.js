@@ -1,5 +1,6 @@
 import { updateListTitle } from "./updateListTitle.js";
 import { fetchPhoto } from "./fetchPhoto.js";
+import { spinnerGif } from "./selectors.js";
 
 export class Card {
   constructor() {
@@ -65,7 +66,7 @@ export class Card {
     if(newDestination) card.cardTitleElement.textContent = newDestination;
     if(newLocation) card.cardSubtitleElement.textContent = newLocation;
     if(newDestination && newLocation) {
-      card.imgElement.src = "https://c.tenor.com/wpSo-8CrXqUAAAAi/loading-loading-forever.gif";
+      card.imgElement.src = spinnerGif;
       card.imgElement.src = await fetchPhoto(newDestination, newLocation);
     }
   }  
