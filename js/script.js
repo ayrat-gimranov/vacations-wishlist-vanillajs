@@ -8,7 +8,7 @@ async function addCard(e, container) {
   e.preventDefault();
   let destination = e.target.destination.value;
   let location = e.target.location.value;
-  let photo = "../img/Loading_icon.gif";
+  let photo = "img/Loading_icon.gif";
   let description = e.target.description.value;
 
   e.target.reset();
