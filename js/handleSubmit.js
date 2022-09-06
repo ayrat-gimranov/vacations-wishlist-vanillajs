@@ -1,6 +1,7 @@
 import { updateListTitle } from "./updateListTitle.js";
 import { spinnerGif } from "./selectors.js";
 import { Card } from "./Card.js";
+import SERVER from './serverURL.js';
 
 export default async function handleSubmit(e, container) {
   e.preventDefault();
@@ -17,7 +18,7 @@ export default async function handleSubmit(e, container) {
   updateListTitle();
 
   try {
-    let response = await fetch('http://localhost:3001/destinations', {
+    let response = await fetch(`${SERVER}/destinations`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json;charset=utf-8' },
       body: JSON.stringify({
