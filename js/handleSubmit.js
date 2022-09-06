@@ -29,7 +29,7 @@ export default async function handleSubmit(e, container) {
     })
 
     const result = await response.json();
-    cardObject.imgElement.src = result.finalPhoto;
+    cardObject.imgElement.src = result.photo;
     cardObject._id = result._id;
   } catch (error) {
     console.log("oh no!", error.message);
