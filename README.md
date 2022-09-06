@@ -4,4 +4,4 @@ Author - Ayrat Gimranov
 
 (Used with Bootstrap 5.2)
 
-- Live site: https://ayrat-gimranov.github.io/vacations-wishlist-vanillajs/
+- Live site: https://vacation-destinations-ag.netlify.app/

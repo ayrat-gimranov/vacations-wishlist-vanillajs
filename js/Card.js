@@ -35,7 +35,7 @@ export class Card {
     buttonGroup.className = "card_body";
 
     let card = document.createElement('div');
-    card.className = 'card';
+    card.className = 'card shadow-sm bg-light';
     card.style.width = '15rem';
 
     let cardBody = document.createElement('div');
