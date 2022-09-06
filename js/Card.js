@@ -1,5 +1,6 @@
 import { updateListTitle } from "./updateListTitle.js";
 import { spinnerGif } from "./selectors.js";
+import SERVER from './serverURL.js';
 
 export class Card {
   constructor() {
@@ -81,7 +82,7 @@ export class Card {
       body.id = card._id;
       card.imgElement.src = spinnerGif;
       try{
-        const response = await fetch('http://localhost:3001/destinations', {
+        const response = await fetch(`${SERVER}/destinations`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json;charset=utf-8' },
           body: JSON.stringify(body)
@@ -101,7 +102,7 @@ export class Card {
     card.style.display = 'none';
     updateListTitle();
     try {
-      let response = await fetch('http://localhost:3001/destinations', {
+      let response = await fetch(`${SERVER}/destinations`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json;charset=utf-8' },
         body: JSON.stringify({
@@ -111,6 +112,7 @@ export class Card {
       card.remove();
       updateListTitle();
     } catch (error) {
+      console.log(error)
       alert("Error: Could not delete the card!");
       card.style.display = originalDisplayMode;
       updateListTitle()
